@@ -114,7 +114,28 @@ class UsuariosController extends Controller
         
     }
    
+    public function editar_usuario(Request $request, $id)
+    {
+        $usuario = Usuarios::where('id_usuario', '=', $request->id)
+            ->update(array(
 
+                'cedula' => $request->cedula,
+                'nombres' => $request->nombres,
+                'apellidos' => $request->apellidos,
+                'telefono'=> $request->telefono,
+                'correo' =>$request->correo,
+                'contrasena' => $request->contrasena,
+                'tipo_usuario' => $request->tipo_usuario,
+            ));
+
+        return $usuario;
+        // $caja = caja::findOrFail($request->id);
+        // $caja->nombre_caja=$request->nombre_caja;
+        // $caja->estado_caja = $request->estado_caja;
+        // $caja->id_sucursal = $request->id_sucursal;
+        // $caja->save();
+        // return $caja;
+    }
     
 
 }
