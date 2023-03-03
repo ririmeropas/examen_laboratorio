@@ -1,0 +1,81 @@
+.form-col-container {
+    display: flex;
+    margin: 5px;
+    width: 150%;
+    /* justify-content: center;
+    align-items: center; */
+    /* border: 1px solid red; */
+  }
+.form-col-container input{
+    width: 300px;
+    /* border: 1px solid red; */
+}
+.content_list_button_planes {
+    
+    background: white;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    /* overflow-y: scroll; */
+    overflow: auto;
+    /*Graceful degradation para Firefox*/
+    overflow: overlay;
+    /* scroll-behavior: smooth; */
+    flex-direction: column;
+    border: 1px solid rgb(103, 101, 101);
+    border-radius: 5px;
+    
+}
+
+.content_list_button_planes::-webkit-scrollbar {
+    display: none;
+   }
+
+.content_list_button_planes button {
+    background-color: white;
+    border: none;
+    text-align: start;
+    padding: 5px;
+    border-bottom: 1px solid rgba(43, 43, 43, 0.251);
+
+    /* border-bottom: 0.5px solid rgb(103, 101, 101); */
+}
+.content_list_button_planes button:hover{
+    background: #3a85ff86;
+    cursor: pointer;
+}
+.form-col-container-planes{
+    display: flex;
+    margin: 5px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-col-container-planes.active {
+    
+    margin-top: 36px;
+    /* margin-left: 100px; */
+    width: 35%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    /* border: solid red; */
+
+}
+.form-col-container-planes.desactive {
+
+    width: 50%;
+    position: relative;
+    display: none;
+    /* border: solid red; */
+
+}
+
+.css-1bwc6vp-MuiTable-root tbody tr td {
+    padding-left: 0;
+    text-transform: inherit;
+}

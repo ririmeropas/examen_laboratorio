@@ -19,6 +19,11 @@ const CrearUsuario = Loadable(lazy(() => import('./usuario/crear_usuario/AppForm
 const VerUsuario = Loadable(lazy(() => import('./usuario/ver_usuario/AppTable')));
 const EditarUsuario = Loadable(lazy(() => import('./usuario/editar_usuario/AppForm_editar')));
 const BiometriaHematica = Loadable(lazy(() => import('./usuario_examenes/hematologia/biometria_hematica/AppForm_biometira_hematica')));
+const VerExamenesUsuario = Loadable(lazy(() => import('./usuario_examen/ver_examenes/AppTable')));
+const VerExamenes = Loadable(lazy(() => import('./usuario_examenes/ver_examenes/AppTable')));
+const EditarBiometriaHematica = Loadable(lazy(() => import('./usuario_examenes/hematologia/editar_hematologia/AppForm_biometira_hematica')));
+const Orina = Loadable(lazy(() => import('./usuario_examenes/orina/crear_examen/AppForm_Orina')));
+const EditarOrina = Loadable(lazy(() => import('./usuario_examenes/orina/editar_examen/AppForm_Orina')));
 
 
 const materialRoutes = [
@@ -93,6 +98,26 @@ const materialRoutes = [
   {
     path: '/material/biometria_hematica',
     element: <BiometriaHematica />,
+  },
+  {
+    path: '/material/ver_examenes',
+    element: <VerExamenes />,
+  },
+  {
+    path: '/material/ver_examenes_usuario',
+    element: <VerExamenesUsuario />,
+  },
+  {
+    path: '/material/editar_biometria_hematica/:id_examen',
+    element: <EditarBiometriaHematica />,
+  },
+  {
+    path: '/material/crear_orina',
+    element: <Orina />,
+  },
+  {
+    path: '/material/editar_orina/:id_examen',
+    element: <EditarOrina />,
   },
 ];
 

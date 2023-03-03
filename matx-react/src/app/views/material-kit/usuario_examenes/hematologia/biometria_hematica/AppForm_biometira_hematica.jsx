@@ -22,7 +22,7 @@ const AppForm_biometria_hematica = () => {
       </Box> */}
 
       <Stack spacing={3}>
-        <SimpleCard title="Examen Biometria Hematica">
+        <SimpleCard title="Examen Biometría Hemática">
           <Biometria_hematica />
         </SimpleCard>
 

@@ -41,12 +41,18 @@ class UsuariosController extends Controller
         $usuario = Usuarios::where('id_usuario', '=', $id)->first();
         return response()->json($usuario);
     }
+    public function Mostar_usuario_unico($id)
+    {
+        $usuario = Usuarios::where('id_usuario', '=', $id)->first();
+        return response()->json([$usuario]);
+    }
     public function Mostar_usuario_admin()
     {
         $usuarios_admin = DB::select(
             'SELECT *
             FROM usuarios
-           WHERE usuarios.tipo_usuario="U"',
+           WHERE usuarios.tipo_usuario="U"
+           ORDER BY usuarios.created_at DESC',
             
         );
         return response()->json($usuarios_admin);
@@ -61,6 +67,9 @@ class UsuariosController extends Controller
                     'nombres' => 'required',
                     'apellidos' => 'required',
                     'telefono' => 'required',
+                    'edad' => 'required',
+                    'codigo' => 'required',
+                    'sexo' => 'required',
                     'correo' => 'required|unique:Usuarios',
                     'contrasena' => 'required',
                     'tipo_usuario' => 'required',
@@ -79,18 +88,13 @@ class UsuariosController extends Controller
                 ], 422);
             } else {
                 $empresa = new Usuarios();
-            //     $table->id('id_usuario');
-            // $table->string('cedula');
-            // $table->string('nombres');
-            // $table->string('apellidos');
-            // $table->string('telefono');
-            // $table->string('correo');
-            // $table->string('contrasena');
-            // $table->string('tipo_usuario');
                 $empresa->cedula = $request->cedula;
                 $empresa->nombres = $request->nombres;
                 $empresa->apellidos = $request->apellidos;
                 $empresa->telefono = $request->telefono;
+                $empresa->edad = $request->edad;
+                $empresa->codigo = $request->codigo;
+                $empresa->sexo = $request->sexo;
                 $empresa->correo = $request->correo;
                 $empresa->contrasena = $request->contrasena;
                 $empresa->tipo_usuario = $request->tipo_usuario;
@@ -102,6 +106,9 @@ class UsuariosController extends Controller
            
             }
         } catch (\Exception $e) {
+            return response()->json([
+                'status' => $e,
+            ]);
         }
 
     }
@@ -122,6 +129,9 @@ class UsuariosController extends Controller
                 'nombres' => $request->nombres,
                 'apellidos' => $request->apellidos,
                 'telefono'=> $request->telefono,
+                'edad'=> $request->edad,
+                'codigo'=> $request->codigo,
+                'sexo'=> $request->sexo,
                 'correo' =>$request->correo,
                 'contrasena' => $request->contrasena,
                 'tipo_usuario' => $request->tipo_usuario,

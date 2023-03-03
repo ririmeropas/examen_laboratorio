@@ -69,7 +69,22 @@ const AutocompleteCombo = () => {
     <Fragment>
       <AutoComplete
         options={suggestions}
-        getOptionLabel={(option) => option.label}
+        // getOptionLabel={(option) => option.label}
+        getOptionLabel={(option) => {
+          //   console.log(option.label);
+          // return option.label
+          if (typeof option === 'string') {
+            console.log(option);
+            return option;
+          }
+          if (option.inputValue) {
+            console.log(option.inputValue);
+            return option.inputValue;
+          }
+          return option.label;
+
+        }}
+
         renderInput={(params) => (
           <TextField {...params} label="Combo box" variant="outlined" fullWidth />
         )}
@@ -100,11 +115,13 @@ const AutocompleteCombo = () => {
 
       <AutoComplete
         options={suggestions}
-        getOptionLabel={(option) => option.label}
+        getOptionLabel={(option) => option.label
+        }
         getOptionDisabled={(option) => option === suggestions[0] || option === suggestions[2]}
         renderInput={(params) => (
           <TextField {...params} label="Disabled option" variant="outlined" fullWidth />
-        )}
+        )
+        }
       />
     </Fragment>
   );

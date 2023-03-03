@@ -4,21 +4,11 @@ export const navavegar_usuario = [
     
     { label: 'EXAMENES LABORATORIO', type: 'label' },
     {
-      name: 'Examenes',
+      name: 'Exámenes',
       icon: 'library_books',
       children: [
-        {
-          name: 'HEMATOLOGÍA',
-          children: [
-            { name: 'Biometria Hematica', path: '/material/form' },
-          ]
-        },
-        {
-          name: 'HECES',
-          children: [
-            { name: 'Coprocultivo', path: '/material/form' },
-          ]
-        },
+        { name: 'Ver Examenes', path: '/material/ver_examenes_usuario' },
+     
       ],
     },
    

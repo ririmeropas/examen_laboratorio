@@ -63,8 +63,10 @@ const Sidenav = ({ children }) => {
     <Fragment>
       <StyledScrollBar options={{ suppressScrollX: true }}>
         {children}
-        {tipo_usuario==="A"?<MatxVerticalNav items={navigations} />:<MatxVerticalNav items={navavegar_usuario} /> }
-
+        {/* {tipo_usuario==="A"?<MatxVerticalNav items={navigations} />:<MatxVerticalNav items={navavegar_usuario} /> } */}
+        {tipo_usuario==="A"?<MatxVerticalNav items={navigations} />:null}
+        {tipo_usuario==="U"?<MatxVerticalNav items={navavegar_usuario} />:null}
+        
         
       </StyledScrollBar>
 

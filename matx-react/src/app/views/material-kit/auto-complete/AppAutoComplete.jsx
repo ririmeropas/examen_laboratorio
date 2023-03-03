@@ -26,7 +26,7 @@ const AppAutoComplete = () => {
         <AutocompleteCombo />
       </SimpleCard>
 
-      <Box py="12px" />
+      {/* <Box py="12px" />
 
       <SimpleCard title="Asyncronous Autocomplete">
         <AsyncAutocomplete />
@@ -36,7 +36,7 @@ const AppAutoComplete = () => {
 
       <SimpleCard title="Asyncronous Autocomplete">
         <BadgeAutocomplete />
-      </SimpleCard>
+      </SimpleCard> */}
     </Container>
   );
 };

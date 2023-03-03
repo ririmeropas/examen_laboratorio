@@ -49,11 +49,10 @@ const Crear_usuario = () => {
     cedula: "",
     nombres: "",
     apellidos: "",
-    // primer_nombre: "",
-    // primer_apellido: "",
-    // segundo_nombre: "",
-    // segundo_apellido: "",
     telefono: "",
+    edad: "",
+    codigo: "",
+    sexo: "",
     correo: "",
     contrasena: "",
     tipo_usuario: "U"
@@ -90,6 +89,9 @@ const Crear_usuario = () => {
           nombres: form_usuario.nombres,
           apellidos: form_usuario.apellidos,
           telefono: form_usuario.telefono,
+          edad: form_usuario.edad,
+          codigo: form_usuario.codigo,
+          sexo: form_usuario.sexo,
           correo: form_usuario.correo,
           contrasena: form_usuario.cedula,
           tipo_usuario: "U"
@@ -134,22 +136,14 @@ const Crear_usuario = () => {
       <ValidatorForm>
         <Grid container spacing={6}>
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-            {/* <TextField
-              type="text"
-              name="username"
-              id="standard-basic"
-              value={username || ""}
-              onChange={handleChange}
-              errorMessages={["this field is required"]}
-              label="Nombre Usuario"
-              validators={["required", "minStringLength: 4", "maxStringLength: 9"]}
-            /> */}
+            
 
             <TextField
               type="text"
               name="nombres"
               label="Nombres"
               onChange={handleChange_usuario}
+              autocomplete="off"
               value={form_usuario.nombres}
               validators={["required"]}
               errorMessages={["this field is required"]}
@@ -173,21 +167,38 @@ const Crear_usuario = () => {
               validators={["required"]}
               errorMessages={["this field is required"]}
             />
-
-            {/* <TextField
-              sx={{ mb: 4 }}
-              type="number"
-              name="creditCard"
-              label="Credit Card"
-              onChange={handleChange}
-              value={creditCard || ""}
+            <TextField
+              type="text"
+              name="edad"
+              label="Edad"
+              onChange={handleChange_usuario}
+              value={form_usuario.edad}
+              validators={["required"]}
               errorMessages={["this field is required"]}
-              validators={["required", "minStringLength:16", "maxStringLength: 16"]}
-            /> */}
+            />
+
+           
           </Grid>
 
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-
+          <TextField
+              type="text"
+              name="sexo"
+              label="Sexo"
+              onChange={handleChange_usuario}
+              value={form_usuario.sexo}
+              validators={["required"]}
+              errorMessages={["this field is required"]}
+            />
+          <TextField
+              type="text"
+              name="codigo"
+              label="Código"
+              onChange={handleChange_usuario}
+              value={form_usuario.codigo}
+              validators={["required"]}
+              errorMessages={["this field is required"]}
+            />
 
             <TextField
               type="text"
@@ -207,41 +218,6 @@ const Crear_usuario = () => {
               validators={["required"]}
               errorMessages={["this field is required"]}
             />
-
-
-            {/* <RadioGroup
-              row
-              name="gender"
-              sx={{ mb: 2 }}
-              value={gender || ""}
-              onChange={handleChange}
-            >
-              <FormControlLabel
-                value="Male"
-                label="Male"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-
-              <FormControlLabel
-                value="Female"
-                label="Female"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-
-              <FormControlLabel
-                value="Others"
-                label="Others"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-            </RadioGroup> */}
-
-            {/* <FormControlLabel
-              control={<Checkbox />}
-              label="I have read and agree to the terms of service."
-            /> */}
           </Grid>
         </Grid>
 

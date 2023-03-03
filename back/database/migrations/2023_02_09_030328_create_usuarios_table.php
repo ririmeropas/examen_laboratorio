@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('telefono');
+            $table->string('edad');
+            $table->string('codigo');
+            $table->string('sexo');
             $table->string('correo');
             $table->string('contrasena');
             $table->string('tipo_usuario');
